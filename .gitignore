@@ -1,0 +1,36 @@
+# Terraform (state + secrets; lock file có thể commit để cố định provider version)
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+!terraform/terraform.tfvars.example
+
+# SSH / keys (không commit key material)
+*.pem
+*.key
+*.ppk
+
+# OpenVPN (chứa cert, không commit)
+*.ovpn
+
+# Ansible (inventory có thể chứa IP; retry là tạm)
+ansible/inventory.ini
+ansible/*.retry
+
+# Env / log
+.env
+.env.*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+.cursor/
+*.swp
+*.swo
+*~

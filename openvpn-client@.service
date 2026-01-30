@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenVPN client %i
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/openvpn --config /home/minhtri/Downloads/ec2_bastion/client1.ovpn
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
